@@ -14,7 +14,7 @@ type Schema = {
 let db: lowdb.LowdbSync<Schema>;
 
 export const createConnection = async () => {
-  const adapter = new FileSync<Schema>("lowdb/dbUser.json");
+  const adapter = new FileSync<Schema>("src/lowdb/dbUser.json");
   db = lowdb(adapter);
   db.defaults({ users: [] }).write();
 };

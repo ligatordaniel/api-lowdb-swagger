@@ -8,6 +8,7 @@ import swaggerJsDoc from "swagger-jsdoc";
 import { options } from "./swaggerOptions";
 
 import tasksRoutes from "./routes/tasks.routes";
+import usersRoutes from "./routes/users.routes";
 
 const app = express();
 
@@ -20,7 +21,7 @@ app.use(express.json());
 const specs = swaggerJsDoc(options);
 
 // Routes
-app.use(tasksRoutes);
+app.use(tasksRoutes, usersRoutes);
 app.use("/api-explorer", swaggerUI.serve, swaggerUI.setup(specs));
 
 export default app;
