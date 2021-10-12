@@ -21,7 +21,8 @@ app.use(express.json());
 const specs = swaggerJsDoc(options);
 
 // Routes
-app.use(tasksRoutes, usersRoutes);
+app.use(usersRoutes);
+app.use(tasksRoutes);
 app.use("/api-explorer", swaggerUI.serve, swaggerUI.setup(specs));
 
 export default app;

@@ -1,6 +1,6 @@
 import { Handler } from "express";
 import { nanoid } from "nanoid";
-import { getConnection } from "../lowdb/dbUser";
+import { getConnection } from "../lowdb/lowdbConfig";
 
 export const getUsers: Handler = (req, res) => {
   const data = getConnection().get("user").value();
